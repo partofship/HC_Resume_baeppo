@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    EMAIL_PROVIDER: str = "gmail"
+    EMAIL_PROVIDER: str = "naver"
 
     EMAIL_USER: str
     EMAIL_PASS: str
