@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     CONTACT_EMAIL: str = "hanyul0417@gmail.com"
 
     EMAIL_HOST: str = ""
-    EMAIL_PORT: int = 587
+    EMAIL_PORT: int = 465
 
     class Config:
         env_file = ".env"
@@ -20,7 +20,7 @@ class Settings(BaseSettings):
         super().__init__(**values)
         if self.EMAIL_PROVIDER == "naver":
             self.EMAIL_HOST = "smtp.naver.com"
-            self.EMAIL_PORT = 587
+            self.EMAIL_PORT = 465
         elif self.EMAIL_PROVIDER == "gmail":
             self.EMAIL_HOST = "smtp.gmail.com"
             self.EMAIL_PORT = 587
