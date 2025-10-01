@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Sussyoo",
+    "desc": "웹 서비스 백엔드 개발 · 로그인 기능 구현 담당",
+    "image": "/static/images/project1.png",
+    "main": true,
+    "mini1" : "/static/images/project1-1.png",
+    "mini2" : "/static/images/project1-2.png",
+    "mini3" : "/static/images/project1-3.png"
+  },
+  {
+    "title": "Focuz",
+    "desc": "모바일 앱 백엔드 개발 · 수면 인지 테스트 모듈 담당",
+    "image": "static/images/project2.png",
+    "main": true,
+    "mini1" : "/static/images/project2-1.png",
+    "mini2" : "/static/images/project2-2.png",
+    "mini3" : "/static/images/project2-3.png"
+  },
+  {
+    "title": "CJcus",
+    "desc": "윈도우 프로그램 개발 · 메일 전송 및 거래명세서 기능 전담",
+    "image": "static/images/project3.jpg",
+    "main": true,
+    "mini1" : "/static/images/project3-1.png",
+    "mini2" : "/static/images/project3-2.png",
+    "mini3" : "/static/images/project3-3.png"
+  }
+]

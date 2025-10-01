@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Home - Hanyul{% endblock %}
+{% block content %}
+  <section class="hero">
+    <h1>Hello, I am Hanyul</h1>
+    <p class="roles">
+      Backend Developer / Python Developer / C# Developer <br>
+      Windows Application Developer / Java Developer
+    </p>
+  </section>
+
+  <div class="container mt-5 text-center">
+    <h3>Projects Portfolio</h3>
+    <div id="projectsCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for project in projects if project.main %}
+        <div class="carousel-item {% if loop.first %}active{% endif %}">
+          <div class="card shadow-lg mx-auto" style="max-width:700px;">
+            <img src="{{ project.image }}" class="card-img-top" alt="{{ project.title }}">
+            <div class="card-body text-center">
+              <h4 class="card-title">{{ project.title }}</h4>
+              <p class="card-text text-muted">{{ project.desc }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <div class="mt-4">
+      <a href="/projects" class="btn btn-primary">More Projects</a>
+    </div>
+  </div>
+{% endblock %}

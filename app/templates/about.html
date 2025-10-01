@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}About - Hanyul{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-end mb-3">
+    <button id="langToggle" class="btn btn-outline-primary btn-sm" onclick="toggleEnglish()">한국어</button>
+  </div>
+
+  <h2 class="text-center mb-5">About Me</h2>
+
+  <!-- Introduce -->
+  <section class="mb-5">
+    <div class="korean d-none">
+      <h3>소개</h3>
+      <p>
+        중학교 시절 우연히 접한 프로그래밍은 단순한 호기심을 넘어 인생의 방향을 새롭게 설정하는 계기가 되었습니다. 그때부터 시작된 여정은 기술적 숙련을 넘어 문제 해결에 대한 깊은 통찰과 창조적 사고의 기쁨을 깨닫는 과정이었으며, 이는 곧 제 인생의 근간이 되었습니다. 수많은 시행착오와 도전을 거치며 프로그래밍은 저에게 단순한 도구가 아니라, 세상을 이해하고 소통하는 하나의 언어이자 철학으로 자리 잡았습니다.
+        <br><br>
+        학습의 길은 결코 평탄하지 않았습니다. 복잡한 알고리즘과 논리적 사고의 벽 앞에서 좌절하기도 했으나, 그럴 때마다 끈기와 성실함으로 문제를 다각도에서 분석하며 해결책을 모색하는 법을 배웠습니다. 특히 팀 프로젝트와 협업을 통해 타인과의 소통과 협력의 중요성을 깊이 깨닫게 되었고, 이는 기술적 역량뿐 아니라 인간적 성장에도 큰 밑거름이 되었습니다. 서로 다른 배경과 관점을 가진 이들과 함께 목표를 향해 나아가는 과정은 저에게 진정한 ‘팀워크’의 의미를 일깨워 주었습니다.
+        <br><br>
+        오늘날 급변하는 IT 환경 속에서 저는 끊임없는 자기계발과 혁신을 추구합니다. 새로운 기술을 습득하는 데 그치지 않고, 이를 실무에 적용하여 사용자 중심의 가치를 창출하는 데 집중합니다. 문제의 본질을 꿰뚫어 보고 최적의 해결책을 제시하는 능력은 물론, 변화에 유연하게 대응하는 태도 또한 저의 강점입니다. 앞으로도 기술과 인간미가 조화된 개발자로서, 사회에 긍정적인 영향을 미치는 혁신을 이끌어 나가고자 합니다.
+      </p>
+    </div>
+    <div class="english">
+      <h3>Introduction</h3>
+      <p>
+        My foray into programming began unexpectedly during my middle school years, evolving from mere curiosity into a profound journey that reshaped the trajectory of my life. This journey transcended technical proficiency, leading me to discover the intellectual satisfaction of solving intricate problems and the joy inherent in creative thinking. Programming soon became more than a skill—it emerged as a language and philosophy through which I comprehend and engage with the world.
+        <br><br>
+        The path of learning was far from smooth. Confronted with complex algorithms and rigorous logical challenges, I often faced moments of frustration. Yet, through perseverance and diligent effort, I cultivated the ability to analyze problems from diverse perspectives and devise effective solutions. Collaborative projects further deepened my appreciation for communication and teamwork, nurturing not only my technical expertise but also my personal growth. Working alongside individuals from varied backgrounds taught me the true essence of synergy and collective progress.
+        <br><br>
+        In today’s rapidly evolving IT landscape, I am committed to continuous self-improvement and innovation. I strive not only to acquire new technologies but also to apply them pragmatically to create user-centered value. My strengths lie in discerning the core of problems and delivering optimal solutions, coupled with a flexible mindset that embraces change. Moving forward, I aspire to lead innovations that harmonize technical excellence with humanistic values, contributing positively to society as a developer.
+      </p>
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <!-- Skill -->
+  <section class="mb-5">
+    <div class="korean d-none">
+      <h3>기술 스택</h3>
+      <ul>
+        <li><strong>언어:</strong> Python, Java, C# - 다양한 프로그래밍 언어를 활용하여 유연하고 효율적인 코드를 작성합니다.</li>
+        <li><strong>백엔드 프레임워크:</strong> Django, FastAPI, Flask - 안정적이고 확장 가능한 서버 사이드 애플리케이션을 개발합니다.</li>
+        <li><strong>데이터베이스:</strong> MySQL, PostgreSQL, SQLite - 데이터 저장 및 관리를 위한 관계형 데이터베이스를 활용합니다.</li>
+        <li><strong>배포 및 클라우드:</strong> AWS, Vercel - 클라우드 환경에서의 서비스 배포와 운영 경험을 보유하고 있습니다.</li>
+        <li><strong>도구:</strong> Git (버전 관리), VSCode (개발 환경) - 효율적인 협업과 개발을 위한 필수 도구들을 능숙하게 다룹니다.</li>
+      </ul>
+      <p>
+        새로운 기술을 적극적으로 습득하고 프로젝트에 적용하여, 시스템의 안정성과 확장성을 고려한 최적의 아키텍처 설계를 추구합니다. 각 기술 스택에 대한 깊은 이해를 바탕으로 효율적인 개발과 유지보수를 실현합니다.
+      </p>
+    </div>
+    <div class="english">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li><strong>Languages:</strong> Python, Java, C# - Proficient in multiple programming languages to write flexible and efficient code.</li>
+        <li><strong>Backend Frameworks:</strong> Django, FastAPI, Flask - Experienced in building robust and scalable server-side applications.</li>
+        <li><strong>Databases:</strong> MySQL, PostgreSQL, SQLite - Skilled in managing relational databases for reliable data storage and retrieval.</li>
+        <li><strong>Deployment & Cloud:</strong> AWS, Vercel - Knowledgeable in deploying and maintaining applications in cloud environments.</li>
+        <li><strong>Tools:</strong> Git (Version Control), VSCode (Development Environment) - Adept at using essential tools for efficient collaboration and development.</li>
+      </ul>
+      <p>
+        I actively acquire and integrate new technologies to maximize system stability and scalability, focusing on designing optimal architectures. My thorough understanding of each technology stack enables efficient development and maintenance.
+      </p>
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <!-- Experience -->
+  <section class="mb-5">
+    <div class="korean d-none">
+      <h3>경력 및 주요 프로젝트</h3>
+      <ul>
+        <li>
+          외주 프로젝트 수행: 클라이언트의 요구를 정확히 분석하고, 체계적인 기능 설계와 개발, 그리고 안정적인 시스템 배포까지 전 과정에 걸쳐 책임감을 가지고 임하였습니다. 복잡한 요구사항을 명확히 이해하고 최적의 아키텍처를 설계함으로써, 안정적이고 확장 가능한 서비스를 구현하여 고객의 비즈니스 성공에 기여했습니다. 프로젝트 진행 중 발생하는 다양한 기술적 난제들을 해결하며, 지속적인 유지보수와 성능 개선을 통해 서비스의 신뢰성과 품질을 높였습니다.
+        </li>
+        <li>
+          자동 메일 발송 시스템 개발: 다양한 조건 기반 트리거를 구현하여 복잡한 비즈니스 로직을 반영한 자동화 메일 시스템을 구축하였습니다. 이를 통해 고객과의 소통 효율성을 극대화하고, 운영 비용 절감에 크게 기여하였습니다. 신뢰성과 확장성을 고려한 아키텍처 설계로 시스템의 안정적인 운용을 보장하였으며, 사용자 요구 변화에 유연하게 대응할 수 있도록 설계하였습니다.
+        </li>
+        <li>
+          OZ코딩스쿨 백엔드 과정 수료 후 팀 프로젝트 참여: JWT 기반 인증 시스템 설계 및 구현을 주도하며, 마이페이지, 공지사항, 댓글 기능 개발을 통해 사용자 경험을 크게 향상시켰습니다. 다양한 API 설계와 보안 강화 작업을 수행하는 과정에서 팀 내 역할 분담과 협업 프로세스를 효율적으로 관리하였고, Git과 협업 도구를 활용해 원활한 소통과 코드 품질 관리를 실현했습니다. 이 경험은 실제 서비스 개발 전반을 체험하며 실무 역량을 한층 강화하는 중요한 계기가 되었습니다.
+        </li>
+      </ul>
+    </div>
+    <div class="english">
+      <h3>Experience & Key Projects</h3>
+      <ul>
+        <li>
+          Executed client projects with a comprehensive approach encompassing precise requirement analysis, systematic feature design, development, and stable system deployment. By thoroughly understanding complex requirements and architecting optimal solutions, I delivered reliable and scalable services that supported clients’ business success. I resolved diverse technical challenges throughout the project lifecycle and enhanced service reliability and quality through continuous maintenance and performance optimization.
+        </li>
+        <li>
+          Developed an automated email dispatch system incorporating condition-based triggers to reflect intricate business logic. This system maximized communication efficiency with customers and significantly reduced operational costs. The architecture was designed with reliability and scalability in mind, ensuring stable operation and adaptability to evolving user needs.
+        </li>
+        <li>
+          After completing the OZ Coding School backend course, I led the design and implementation of a JWT-based authentication system for team projects. I enhanced user experience by developing user profile pages, announcements, and comment features. Throughout the process, I efficiently managed team roles and collaboration workflows, utilizing Git and collaboration tools to maintain smooth communication and high code quality. This experience provided invaluable hands-on exposure to end-to-end service development, significantly elevating my practical skills.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <!-- Project Summary -->
+  <section>
+    <div class="korean d-none">
+      <h3>프로젝트 요약</h3>
+      <ul>
+        <li>
+          JWT 기반 사용자 인증 시스템 개발: 보안성과 확장성을 최우선으로 고려하여 설계 및 구현하였으며, 다양한 인증 시나리오에 대응할 수 있는 유연한 구조를 갖추었습니다. 이를 통해 사용자 데이터 보호와 서비스 접근 관리가 한층 강화되었고, 인증 프로세스의 효율성 또한 크게 향상되었습니다.
+        </li>
+        <li>
+          인지능력 테스트 결과 자동 생성 시스템 구축: 사용자의 입력 데이터를 정확하고 신속하게 처리하여 결과를 자동 생성함으로써, 서비스의 신뢰성과 사용자 편의성을 극대화하였습니다. 복잡한 알고리즘과 데이터 처리 로직을 최적화하여 빠른 응답 속도를 보장하며, 다양한 테스트 케이스를 지원하는 확장성을 확보하였습니다.
+        </li>
+        <li>
+          프로젝트 진행 중 발생하는 문제점들을 신속히 파악하고 체계적으로 해결하여, 일정 지연 없이 원활한 개발 프로세스를 유지하였습니다. 팀원들과 긴밀한 협업을 통해 효율적인 문제 해결 방안을 도출하고, 위험 요소를 사전에 예방하는 체계를 마련하는 데 주력하였습니다. 이러한 노력은 프로젝트의 성공적인 완수에 결정적인 역할을 하였습니다.
+        </li>
+        <li>
+          아이디어 도출부터 코드 구현에 이르기까지 전 과정에 적극적으로 참여하여, 실질적인 서비스 개선과 기능 최적화를 달성하였습니다. 사용자 피드백을 반영한 지속적인 업데이트와 품질 향상을 통해 프로젝트 완성도를 높이고, 장기적인 유지보수와 발전 가능성을 확보하였습니다.
+        </li>
+      </ul>
+    </div>
+    <div class="english">
+      <h3>Project Summary</h3>
+      <ul>
+        <li>
+          Developed a JWT-based user authentication system prioritizing security and scalability, with a flexible architecture designed to accommodate diverse authentication scenarios. This significantly enhanced user data protection and access control, while improving the efficiency of the authentication process.
+        </li>
+        <li>
+          Built an automated cognitive test result generation system that accurately and promptly processes user input data, maximizing service reliability and user convenience. By optimizing complex algorithms and data processing logic, the system ensures fast response times and supports a wide range of test cases with scalability.
+        </li>
+        <li>
+          Rapidly identified and systematically resolved issues arising during project execution, maintaining smooth development workflows without delays. Through close collaboration with team members, effective problem-solving strategies were developed, and preventive measures against potential risks were established. These efforts played a pivotal role in the successful completion of projects.
+        </li>
+        <li>
+          Actively engaged in the entire process from ideation to implementation, achieving tangible service improvements and feature optimization. Continuous incorporation of user feedback drove updates and quality enhancements, elevating project completeness and securing long-term maintainability and growth potential.
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+function toggleEnglish() {
+  document.querySelectorAll('.korean').forEach(el => el.classList.toggle('d-none'));
+  document.querySelectorAll('.english').forEach(el => el.classList.toggle('d-none'));
+  const btn = document.getElementById('langToggle');
+  btn.textContent = btn.textContent === 'English' ? '한국어' : 'English';
+}
+</script>
+{% endblock %}

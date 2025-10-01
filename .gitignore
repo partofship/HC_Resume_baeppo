@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# 가상환경
+venv/
+ENV/
+env/
+
+# 환경변수 파일
+.env
+
+# IDE & 편집기
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# 로그 & 캐시
+*.log
+*.pot
+*.pyc
+.cache/
+*.egg-info/
+dist/
+build/
+
+# Vercel
+.vercel/
