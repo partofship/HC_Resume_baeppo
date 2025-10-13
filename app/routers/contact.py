@@ -60,5 +60,5 @@ async def send_mail(
 
     # 다시 contact.html 렌더링 (알림 메시지 표시)
     return templates.TemplateResponse(
-        "contact.html", {"request": request, "projects": [], "result": result}
+        "contact.html", {"request": request, "projects": [], "result": result, "contact_email": settings.CONTACT_EMAIL}
     )
