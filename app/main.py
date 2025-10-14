@@ -1,17 +1,26 @@
 import json
+import os
 import pathlib
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+# FastAPI 앱 생성
 app = FastAPI()
-BASE_DIR = pathlib.Path(__file__).resolve().parent
 
-# 정적 파일 및 템플릿 설정
-app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
+# Vercel 환경에서 경로 설정
+BASE_DIR = pathlib.Path(__file__).resolve().parent
+TEMPLATE_DIR = BASE_DIR / "templates"
+STATIC_DIR = BASE_DIR / "static"
+
+# (삭제: 정적 파일 및) 템플릿 설정
+# app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
+# 로컬 개발 시에만 StaticFiles 마운트
+if os.environ.get("VERCEL_ENV") is None:
+    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 # 프로젝트 데이터 로드
 def load_projects():
@@ -34,6 +43,9 @@ async def home(request: Request):
             "contact_email": "strongandrew@naver.com"
         }
     )
+
+# Vercel 핸들러
+handler = app
 
 # # 간단한 Contact API (미구현)
 # @app.post("/api/contact")
