@@ -9,23 +9,32 @@ from fastapi.templating import Jinja2Templates
 # FastAPI 앱 생성
 app = FastAPI()
 
-# Vercel 환경에서 경로 설정
-BASE_DIR = pathlib.Path(__file__).resolve().parent
-TEMPLATE_DIR = BASE_DIR / "templates"
-STATIC_DIR = BASE_DIR / "static"
+# 경로 설정 - Vercel 환경 대응
+if os.environ.get("VERCEL"):
+    # Vercel 환경에서는 /var/task가 루트
+    BASE_DIR = pathlib.Path("/var/task/app")
+else:
+    # 로컬 환경
+    BASE_DIR = pathlib.Path(__file__).resolve().parent
 
 # (삭제: 정적 파일 및) 템플릿 설정
 # app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 # 로컬 개발 시에만 StaticFiles 마운트
-if os.environ.get("VERCEL_ENV") is None:
-    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+if not os.environ.get("VERCEL"):
+    app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 
 # 프로젝트 데이터 로드
 def load_projects():
-    with open(BASE_DIR / "projects.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        projects_file = BASE_DIR / "projects.json"
+        with open(projects_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error loading projects: {e}")
+        # 파일을 못 찾으면 빈 리스트 반환
+        return []
 
 
 # 메인 라우트 (원페이지)
@@ -44,8 +53,16 @@ async def home(request: Request):
         }
     )
 
-# Vercel 핸들러
-handler = app
+# Health check endpoint (디버깅용)
+@app.get("/api/health")
+async def health():
+    return {
+        "status": "ok",
+        "vercel": os.environ.get("VERCEL", False),
+        "base_dir": str(BASE_DIR),
+        "templates_exists": (BASE_DIR / "templates").exists(),
+        "projects_exists": (BASE_DIR / "projects.json").exists()
+    }
 
 # # 간단한 Contact API (미구현)
 # @app.post("/api/contact")
