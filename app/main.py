@@ -31,7 +31,7 @@ async def home(request: Request):
         {
             "request": request,
             "projects": featured_projects,
-            "contact_email": "hanyul0417@gmail.com"
+            "contact_email": "strongandrew@naver.com"
         }
     )
 
